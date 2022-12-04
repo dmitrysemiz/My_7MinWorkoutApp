@@ -11,5 +11,15 @@ class ExerciseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityExerciseBinding.inflate(layoutInflater)
         setContentView(binding?.root)
+
+        //Enabling toolbar on top, and a back arrow-button
+        setSupportActionBar(binding?.toolbarExercise)
+        binding?.toolbarExercise?.setNavigationOnClickListener {
+            onBackPressed()
+        }
+        if(supportActionBar != null){
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        }
+        //Enabling toolbar on top, and a back arrow-button
     }
 }
