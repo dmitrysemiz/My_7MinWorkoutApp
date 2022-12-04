@@ -114,10 +114,11 @@
         android:textColor="@color/colorAccent"
         android:textSize="25dp"
         android:textStyle="bold"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbarExercise"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText,SpUsage" />
 
     <ImageView
@@ -132,5 +133,17 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbarExercise"
         app:srcCompat="@drawable/pushup"
         android:scaleType="fitCenter"/>
+
+    <Button
+        android:id="@+id/btnExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Exit"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/flExerciseView"
+        app:layout_constraintStart_toStartOf="@+id/flExerciseView"
+        app:layout_constraintTop_toBottomOf="@+id/flExerciseView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

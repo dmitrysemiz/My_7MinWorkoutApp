@@ -1,5 +1,6 @@
 package com.example.my_7minworkoutapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -40,6 +41,11 @@ class ExerciseActivity : AppCompatActivity() {
         }
         //Enabling toolbar on top, and a back arrow-button
         setRestView()
+
+        binding?.btnExit?.setOnClickListener {
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun setRestView(){
@@ -51,7 +57,7 @@ class ExerciseActivity : AppCompatActivity() {
             restProgress = 0
         }
         var nextExercise = exerciseList!![exercisePosition+1].getName()
-        binding?.tvLabel?.text = "Rest"
+        binding?.tvLabel?.text = "Get ready for ${nextExercise}"
         setRestProgressBar()
         exercisePosition++
     }
@@ -67,6 +73,14 @@ class ExerciseActivity : AppCompatActivity() {
         binding?.ivExercise?.setImageResource(exerciseList!![exercisePosition].getImage())
         binding?.tvLabel?.text = exerciseList!![exercisePosition].getName()
         setExerciseProgressBar()
+    }
+
+    private fun setFinishView(){
+        binding?.flRestView?.visibility = View.GONE
+        binding?.flExerciseView?.visibility = View.GONE
+        binding?.ivExercise?.visibility = View.GONE
+        binding?.tvLabel?.text = "Congratulations! You have completed the workout"
+        binding?.btnExit?.visibility = View.VISIBLE
     }
 
 
@@ -96,7 +110,11 @@ class ExerciseActivity : AppCompatActivity() {
                 binding?.tvTimerExercise?.text = (exerciseTime - exerciseProgress).toString()
             }
             override fun onFinish() {
-                setRestView()
+                if(exercisePosition == exerciseList?.size?.minus(1)){
+                    setFinishView()
+                }else{
+                    setRestView()
+                }
             }
         }.start()
     }
