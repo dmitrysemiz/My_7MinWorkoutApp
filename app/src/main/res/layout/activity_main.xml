@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:padding="15dp">
+    android:padding="5dp">
 
     <ImageView
         android:id="@+id/imageView"
@@ -39,8 +39,8 @@
 
     <FrameLayout
         android:id="@+id/frameLayout"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:background="@drawable/item_circular_color_accent_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/frameLayout2"
@@ -61,8 +61,8 @@
 
     <FrameLayout
         android:id="@+id/frameLayout2"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_marginStart="90dp"
         android:background="@drawable/item_circular_color_accent_background"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -85,7 +85,7 @@
         android:textSize="25dp"
         android:textStyle="bold"
         android:layout_marginTop="5dp"
-
+        android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="@+id/frameLayout"
         app:layout_constraintStart_toStartOf="@+id/frameLayout"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
@@ -98,6 +98,7 @@
         android:textSize="25dp"
         android:textStyle="bold"
         android:layout_marginTop="5dp"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="@+id/frameLayout2"
         app:layout_constraintStart_toStartOf="@+id/frameLayout2"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout2" />
