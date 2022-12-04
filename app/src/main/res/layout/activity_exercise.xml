@@ -106,17 +106,31 @@
     </FrameLayout>
 
     <TextView
+        android:id="@+id/tvLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="120dp"
         android:text="Get ready for"
         android:textColor="@color/colorAccent"
         android:textSize="25dp"
         android:textStyle="bold"
-        android:layout_marginBottom="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbarExercise"
         tools:ignore="HardcodedText,SpUsage" />
+
+    <ImageView
+        android:id="@+id/ivExercise"
+        android:layout_width="wrap_content"
+        android:layout_height="220dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/tvLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarExercise"
+        app:srcCompat="@drawable/pushup"
+        android:scaleType="fitCenter"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
